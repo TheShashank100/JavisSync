@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Website</title>
+  <link rel="stylesheet" href="/static/style.css">
+  
+</head>
+<body>
+  <div id="audio-warning" style="display: none; position: fixed; top: 10px; right: 10px; background: #ff4444; padding: 10px; color: white;">
+    ⚠️ Click anywhere to enable audio!
+  </div>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+      <div class="sidebar-content">
+        <button class="icon-btn">
+          <img src="Images/Lyrics.png" alt="Lyrics">
+          <span>Lyrics</span>
+        </button>
+        <button class="icon-btn">
+          <img src="Images/Beats.png" alt="Beats">
+          <span>Beats</span>
+        </button>
+        <button class="icon-btn">
+          <img src="Images/Recommendation.png" alt="Recommendations">
+          <span>Recommendations</span>
+        </button>
+        <button class="icon-btn">
+          <img src="Images/Ai.png" alt="General AI">
+          <span>General AI</span>
+        </button>
+      </div>
+      <button class="settings-btn">
+        <img src="Images/settings.png" alt="Settings">
+        <span>Settings</span>
+      </button>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search conversations...">
+        <button class="action-btn" id="search-btn">Search</button>
+      </div>
+
+      <div class="drop-zone" id="drop-zone">
+        Drag and drop files here or click to upload
+        <input type="file" id="file-input" hidden>
+      </div>
+
+      <div id="response-box"></div>
+      <div id="visualizer" class="visualizer-container"></div>
+
+      <div class="input-box">
+        <div id="response-box"></div>
+        <div id="mood-display" style="display: none; padding: 10px; margin: 10px 0; border-radius: 5px;"></div>
+        <div class="action-buttons">
+          <input type="text" id="user-input" placeholder="Describe the music you want to create...">
+          <button class="action-btn" id="sing-btn">Generate Music</button>
+          <button class="action-btn" id="beats-btn">Generate Beats</button>
+        </div>
+        <button id="send-btn">
+          <span class="btn-text">Send</span>
+          <div class="loading-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <script src="/static/Tone.js"></script>
+  <script src="/static/script.js"></script>
+  
+
+</body>
+</html>
