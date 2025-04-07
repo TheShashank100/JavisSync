@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ToneList - AI Music Assistant</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="dark-mode">
+  <!-- Collapsible Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <button class="collapse-btn" onclick="toggleSidebar()">
+        <span class="material-icons">menu</span>
+      </button>
+      <h2>ToneList</h2>
+    </div>
+
+    <div class="sidebar-content">
+      <button class="nav-btn active">
+        <span class="material-icons">lyrics</span>
+        <span class="nav-text">Lyrics</span>
+      </button>
+      <button class="nav-btn">
+        <span class="material-icons">music_note</span>
+        <span class="nav-text">Beats</span>
+      </button>
+      <button class="nav-btn">
+        <span class="material-icons">recommend</span>
+        <span class="nav-text">Recommend</span>
+      </button>
+      <button class="nav-btn">
+        <span class="material-icons">tune</span>
+        <span class="nav-text">Settings</span>
+      </button>
+    </div>
+
+    <div class="sidebar-footer">
+      <button class="theme-toggle" onclick="toggleTheme()">
+        <span class="material-icons">dark_mode</span>
+        <span class="nav-text">Dark Mode</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="content">
+    <header class="app-header">
+      <h1>AI Music Assistant</h1>
+    </header>
+
+    <div class="chat-container">
+      <div id="response-box" class="message-area"></div>
+      
+      <div class="input-area">
+        <textarea id="user-input" placeholder="Describe the music you want to create..."></textarea>
+        <button id="send-btn" class="primary-btn">
+          <span>Generate</span>
+          <span class="material-icons">send</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script src="/static/script.js"></script>
+  <script src="https://fonts.googleapis.com/icon?family=Material+Icons"></script>
+</body>
+</html>

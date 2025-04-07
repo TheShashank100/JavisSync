@@ -1,0 +1,237 @@
+:root {
+  --primary: #6c5ce7;
+  --primary-dark: #5649d6;
+  --secondary: #a29bfe;
+  --dark-bg: #1a1a2e;
+  --dark-card: #16213e;
+  --dark-text: #e6e6e6;
+  --light-bg: #f8f9fa;
+  --light-card: #ffffff;
+  --light-text: #333333;
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: var(--transition);
+}
+
+/* Dark Mode Default */
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+/* Light Mode */
+body.light-mode {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: var(--dark-card);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar.collapsed .nav-text,
+.sidebar.collapsed h2 {
+  display: none;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 1rem;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+}
+
+.collapse-btn {
+  background: none;
+  border: none;
+  color: var(--dark-text);
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.sidebar-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  background: none;
+  border: none;
+  color: var(--dark-text);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.nav-btn.active {
+  background-color: rgba(108, 92, 231, 0.2);
+  color: var(--primary);
+}
+
+.nav-btn:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.nav-btn .material-icons {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.sidebar-footer {
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--dark-text);
+  cursor: pointer;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: var(--border-radius);
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* Main Content */
+.content {
+  margin-right: 250px;
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.sidebar.collapsed ~ .content {
+  margin-right: 60px;
+}
+
+.app-header {
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.chat-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.message-area {
+  min-height: 400px;
+  max-height: 60vh;
+  overflow-y: auto;
+  background-color: var(--dark-card);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.input-area {
+  display: flex;
+  gap: 1rem;
+}
+
+textarea {
+  flex: 1;
+  min-height: 100px;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border: none;
+  background-color: var(--dark-card);
+  color: var(--dark-text);
+  resize: none;
+  font-family: inherit;
+}
+
+.primary-btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.primary-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Light Mode Overrides */
+body.light-mode .sidebar {
+  background-color: var(--light-card);
+  box-shadow: -2px 0 10px rgba(0,0,0,0.05);
+}
+
+body.light-mode .nav-btn {
+  color: var(--light-text);
+}
+
+body.light-mode .nav-btn:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+body.light-mode .message-area,
+body.light-mode textarea {
+  background-color: var(--light-card);
+  color: var(--light-text);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    margin-bottom: 1rem;
+  }
+  
+  .content {
+    margin-right: 0;
+    padding: 1rem;
+  }
+}
